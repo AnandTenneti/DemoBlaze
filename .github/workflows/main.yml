@@ -18,7 +18,7 @@ jobs:
           # The Google Chrome/Chromium version to install and use.
           chrome-version: "latest"
           # Install dependent packages for Google Chrome/Chromium (Linux only).
-          install-dependencies: "false"
+          install-dependencies: "true
           # Install the compatible version of ChromeDriver with the installed Google Chrome/Chromium.
           install-chromedriver: "true"
           # Do not use sudo to install Google Chrome/Chromium (Linux only).
