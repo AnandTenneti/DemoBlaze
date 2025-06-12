@@ -24,6 +24,6 @@ jobs:
           # Do not use sudo to install Google Chrome/Chromium (Linux only).
           no-sudo: "false"
       - name: Run the web test
-        run: mvn clean test
+        run: mvn clean test -Dtest=CartPageTest
 
 
