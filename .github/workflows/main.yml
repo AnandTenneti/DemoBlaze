@@ -12,12 +12,12 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Setup firefox
+      - name: Setup chrome
         uses: browser-actions/setup-chrome@v1
         with:
           # The Google Chrome/Chromium version to install and use.
           chrome-version: "latest"
       - name: Run the web test
-        run: mvn clean test -Dtest=CartPageTest
+        run: mvn clean test -Dtest=ContactUsTest
 
 
