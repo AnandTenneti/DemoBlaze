@@ -7,16 +7,27 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-import static com.driver.DriverManager.initDriver;
+public class RegisterTest2 {
+    WebDriver driver;
 
-public class RegisterTest extends BaseTest {
+    @BeforeMethod
+    public void setUp() {
+        System.out.println("Setting up the test environment...");
+        WebDriverManager.chromedriver().setup();
+        System.out.println("WebDriver setup complete.");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+    }
 
     @Test
     public void testRegister() throws InterruptedException {
+        driver.get("https://www.demoblaze.com/");
         System.out.println("Title of the page is: " + driver.getTitle());
         driver.findElement(By.linkText("Sign up")).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -31,7 +42,7 @@ public class RegisterTest extends BaseTest {
 
     @Test(priority = 2)
     public void testLoginWithInvalidCredentials() throws InterruptedException {
-        //driver.get("https://www.demoblaze.com/");
+        driver.get("https://www.demoblaze.com/");
         System.out.println("Title of the page is: " + driver.getTitle());
         driver.findElement(By.linkText("Sign up")).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -41,15 +52,19 @@ public class RegisterTest extends BaseTest {
                 "Sign in modal is not displayed");
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.clickOnSignUpButton();
-        String alertMessageText = registrationPage.getAlertMessageText();
-        Assert.assertEquals(alertMessageText, "Please fill out Username and Password.",
-                "Alert text is not matching");
+
+        //driver.findElement(By.xpath("//button[contains(text(),'Sign up')]")).click();
+        Alert alert = driver.switchTo().alert();
+        String alertText = alert.getText();
+        System.out.println("Alert text: " + alertText);
+        Assert.assertEquals(alertText, "Please fill out Username and Password.", "Alert text is not matching");
+
         Thread.sleep(5000);
-        registrationPage.acceptAlert();
+        alert.accept();
         Thread.sleep(3000);
     }
 
-    @AfterTest
+    @AfterMethod
     public void tearDown() {
         System.out.println("Tearing down the test environment...");
         driver.quit();
