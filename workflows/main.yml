@@ -1,0 +1,29 @@
+name: UI Automation using WebDriver and Java CI with Maven
+on: workflow_dispatch
+jobs:
+  run-web-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: pull the project into the runner
+        uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          - name: Setup chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          # The Google Chrome/Chromium version to install and use.
+          chrome-version: "latest"
+          # Install dependent packages for Google Chrome/Chromium (Linux only).
+          install-dependencies: "false"
+          # Install the compatible version of ChromeDriver with the installed Google Chrome/Chromium.
+          install-chromedriver: "true"
+          # Do not use sudo to install Google Chrome/Chromium (Linux only).
+          no-sudo: "false"
+      - name: Run the web test
+        run: mvn clean test
+
+
