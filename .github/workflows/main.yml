@@ -14,7 +14,7 @@ jobs:
           distribution: 'temurin'
           - name: Setup chrome
         uses: browser-actions/setup-chrome@v1
-        with:
+          with:
           # The Google Chrome/Chromium version to install and use.
           chrome-version: "latest"
           # Install dependent packages for Google Chrome/Chromium (Linux only).
