@@ -6,13 +6,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class RegistrationPage {
     WebDriver driver;
+    WebDriverWait wait;
     Alert alert;
 
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Adjust timeout as needed
         PageFactory.initElements(driver, this);
     }
 
@@ -31,7 +36,7 @@ public class RegistrationPage {
     @FindBy(id = "signInModalLabel")
     private WebElement signInModalLabel;
 
-public void clickOnSignUpButton() {
+    public void clickOnSignUpButton() {
         signUpButton.click();
     }
 
@@ -42,12 +47,14 @@ public void clickOnSignUpButton() {
     public void enterPassword(String password) {
         this.password.sendKeys(password);
     }
+
     public String getAlertMessageText() {
-    alert = driver.switchTo().alert();
+        alert = driver.switchTo().alert();
         String alertText = alert.getText();
         System.out.println("Alert text: " + alertText);
         return alertText;
     }
+
     public void acceptAlert() {
         alert.accept();
     }
