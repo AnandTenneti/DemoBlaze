@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: Say hello, it's a Monday
         run: echo '$greeting $first_name is using $cloud'
-      - env:
+        env:
           first_name: 'John'
