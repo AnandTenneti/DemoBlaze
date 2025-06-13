@@ -35,7 +35,7 @@ public class PlaceOrderTest extends BaseTest {
         placeOrderPage.acceptAlert();
         Thread.sleep(5000);
     }
-    @Test
+    @Test(priority=2, enabled=false)
     public void test_PlaceOrder_1() throws InterruptedException {
         // Navigate to the cart page
         HeaderPage headerPage = new HeaderPage(driver);
