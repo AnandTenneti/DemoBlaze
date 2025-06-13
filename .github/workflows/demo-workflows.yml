@@ -11,6 +11,6 @@ jobs:
       greeting: 'Hello,'
     steps:
       - name: Say hello, it's a Monday
-        run: echo '$greeting $first_name is using $cloud'
+        run: echo "${{ env.greeting }} ${{ env.first_name }}! is using ${{env.cloud}}."
         env:
           first_name: 'John'
