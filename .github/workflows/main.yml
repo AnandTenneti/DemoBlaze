@@ -19,13 +19,15 @@ jobs:
           chrome-version: "latest"
       - name: Restore Maven cache
         uses: skjolber/maven-cache-github-action@v3.1.1
+        continue-on-error: true
         with:
           step: restore
       - name: Run the web test
-        run: mvn clean test -Dtest=ContactUsTest
+        run: mvn clean test -Dtest=PlaceOrderTest
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v3.1.1
+        continue-on-error: true
         with:
-            step: save
+          step: save
 
 
