@@ -11,7 +11,6 @@ jobs:
       greeting: 'Hello,'
     steps:
       - name: Say hello, it's a Monday
-        run: echo "$greeting $first_name is using $cloud"
+        run: echo '$greeting $first_name is using $cloud'
       - env:
           first_name: 'John'
-       
