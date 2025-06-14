@@ -14,3 +14,15 @@ jobs:
         run: echo "${{ env.greeting }} ${{ env.first_name }}! is using ${{env.cloud}}."
         env:
           first_name: 'John'
+      - name: Checking context variables
+        run: |
+          echo "Job name: ${{ job.name }}"
+          echo "Job status: ${{ job.status }}"
+          echo "Job id: ${{ job.id }}"
+          echo "Job run id: ${{ github.run_id }}"
+          echo "Workflow name: ${{ github.workflow }}"
+          echo "Workflow run number: ${{ github.run_number }}"
+          echo "Workflow event name: ${{ github.event_name }}"
+          echo "Workflow actor: ${{ github.actor }}"
+          echo "Workflow repository: ${{ github.repository }}"
+          echo "Triggered by: ${{github.triggering_actor}}"
