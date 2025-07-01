@@ -2,10 +2,9 @@ package com.tests;
 
 import com.pages.HeaderPage;
 import com.pages.LoginPage;
-import org.apache.hc.core5.http.Header;
 import org.testng.annotations.Test;
 
-public class LoginPageTest extends BaseTest{
+public class LoginPageTest extends BaseTest {
 
 
     @Test
@@ -21,6 +20,8 @@ public class LoginPageTest extends BaseTest{
         System.out.println("Clicking on Login button...");
         loginPage.clickOnLoginButton();
         Thread.sleep(5000);
+        driver.navigate().refresh();
+        Thread.sleep(8000);
         System.out.println("Verifying the page title...");
         headerPage.clickOnLogOutLink();
         Thread.sleep(5000);
