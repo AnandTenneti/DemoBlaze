@@ -7,9 +7,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 import java.time.Duration;
 
+
 public class LoginPage {
+    SelfHealing selfHealing;
     WebDriver driver;
     WebDriverWait wait;
 
@@ -29,16 +32,27 @@ public class LoginPage {
     private WebElement loginButton;
 
 
+
     public void enterUserName(String username) {
+
+        selfHealing.getSelfHealedLocator(driver, LocatorsRepository.getUserNames());
         loginUsername.sendKeys(username);
     }
 
     public void enterPassword(String password) {
+
+        selfHealing.getSelfHealedLocator(driver, LocatorsRepository.getPassword());
         loginPassword.sendKeys(password);
     }
 
     public void clickOnLoginButton() {
+        selfHealing.getSelfHealedLocator(driver, LocatorsRepository.getLoginButton());
         loginButton.click();
     }
 
-}
+
+
+    }
+
+
+
