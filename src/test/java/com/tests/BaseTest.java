@@ -1,19 +1,20 @@
 package com.tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
+
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
+import java.io.File;
+import java.io.IOException;
+
 import static com.driver.DriverManager.initDriver;
 
 public class BaseTest {
-    WebDriver driver;
+   static  WebDriver driver;
 
     @BeforeTest
     public void setUp() {
@@ -27,14 +28,6 @@ public class BaseTest {
         driver.get("https://www.demoblaze.com/");
     }
 
-//    public WebDriver initDriver() {
-//        System.out.println("Setting up the test environment...");
-//        WebDriverManager.chromedriver().setup();
-//        System.out.println("WebDriver setup complete.");
-//        driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-//        return driver;
-//    }
 
     @AfterTest
     public void tearDown() {
@@ -62,5 +55,14 @@ public class BaseTest {
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         js.executeScript("arguments[0].scrollIntoView(true);", elementId);
+    }
+    public void captureScreenshot(String fileName) throws IOException {
+        System.out.println("Capturing screenshot for test: " + fileName);
+        // Implement screenshot capture logic here
+        // Example: Use a library like AShot or Selenium's TakesScreenshot to capture the screenshot
+        File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        // Save the screenshot to a desired location
+         FileUtils.copyFile(srcFile, new File("screenshots/" + fileName + ".png"));
+        System.out.println("Screenshot saved as: " + fileName + ".png");
     }
 }
