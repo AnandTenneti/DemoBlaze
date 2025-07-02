@@ -47,18 +47,17 @@ with WebElements and methods.
    6. resources/: Configuration and data files, e.g., config.properties, test data, locator files.
 
 ### 🔹 Sample Test Case Ideas
-Login Test
-
-1. Valid/Invalid credentials
-2. Signup and login flow
-3. Add to Cart
-4. Add multiple products
-5. Remove product from cart
-6. Place Order
-7. Fill form and verify order success
-8. Check confirmation modal
-9. Navigation Test
-10. Filter by category (phones/laptops)
+1. Login Test 
+   * Valid/Invalid credentials 
+   * Signup and login flow
+2. Add to Cart
+   * Add multiple products
+   * Remove product from cart
+3. Place Order
+   * Fill form and verify order success 
+   * Check confirmation modal
+4. Navigation Test 
+   * Filter by category (phones/laptops)
 
 ### Tools Used
 
