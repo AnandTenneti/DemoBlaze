@@ -55,33 +55,23 @@ resources/: Configuration and data files, e.g., config.properties, test data, lo
 ### 🔹 Sample Test Case Ideas
 Login Test
 
-Valid/Invalid credentials
+1. Valid/Invalid credentials
+2. Signup and login flow
+3. Add to Cart
+4. Add multiple products
+5. Remove product from cart
+6. Place Order
+7. Fill form and verify order success
+8. Check confirmation modal
+9. Navigation Test
+10. Filter by category (phones/laptops)
 
-Signup and login flow
-
-Add to Cart
-
-Add multiple products
-
-Remove product from cart
-
-Place Order
-
-Fill form and verify order success
-
-Check confirmation modal
-
-Navigation Test
-
-Filter by category (phones/laptops)
 ### Tools Used
 
-Selenium WebDriver
-
-TestNG / JUnit
-
-Maven / Gradle
-
-ExtentReports / Allure (for reporting)
-
-Log4j / SLF4J (for logging)
+* Selenium WebDriver
+* Java
+* TestNG
+* Maven
+* ExtentReports (for reporting)
+* Apache POI (for Excel handling) 
+* Log4j / SLF4J (for logging)
