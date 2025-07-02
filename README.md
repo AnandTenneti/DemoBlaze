@@ -1,7 +1,7 @@
 ### About the Project
 
 Demoblaze is a sample e-commerce site developed by Mercury, featuring:
-* Product categories (Phones, Laptops, Monitors)
+* Product categories (Phones, Laptops, Monitors)   
 * Add to cart and delete functionality
 * Signup/Login
 * Checkout and place order
