@@ -8,7 +8,7 @@ Demoblaze is a sample e-commerce site developed by Mercury, featuring:
 
 ### Project Structure
 
-<pre> ```
+<pre>
 DemoBlaze/
 │
 ├── pom.xml                           # Maven configuration file
@@ -35,7 +35,7 @@ DemoBlaze/
 │
 └── reports/
 └── extent-report.html  
-'''</pre>
+</pre>
 ### Folders
 
 1. base/: Contains BaseTest class that sets up and tears down WebDriver sessions.
@@ -44,7 +44,7 @@ with WebElements and methods.
 3. tests/: Actual test classes that call methods from the pages package.
 4. utils/: Reusable utilities like wait methods, logger config, Excel reading, screenshot capturing.
 5. data/: Optional; data providers for parameterized tests.
-6. resources/: Configuration and data files, e.g., config.properties, test data, locator files.
+   6. resources/: Configuration and data files, e.g., config.properties, test data, locator files.
 
 ### 🔹 Sample Test Case Ideas
 Login Test
