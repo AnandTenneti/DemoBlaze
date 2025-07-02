@@ -26,8 +26,20 @@ public class HomePage {
     @FindBy(id = "next2")
     private WebElement nextButton;
 
+    @FindBy(css = "a[data-slide='prev']")
+    private WebElement previousButtonCarousel;
+
+    @FindBy(css = "a[data-slide='next']")
+    private WebElement nextButtonCarousel;
+
+    @FindBy(css = "div.carousel-item.active>img")
+    private WebElement activeCarouselImageText;
+
     @FindBy(css = "h4.card-title>a")
     private List<WebElement> productLink;
+
+    @FindBy(id = "itemc")
+    private List<WebElement> categoryLinks;
 
     public void clickOnAProduct(String productName) {
         System.out.println("Clicking on product: " + productName);
@@ -48,6 +60,20 @@ public class HomePage {
 
     public boolean isNextButtonDisplayed() {
         return nextButton.isDisplayed();
+    }
+
+    public String getActiveCarouselImageAltText() {
+        return activeCarouselImageText.getDomProperty("alt");
+    }
+
+    public void clickOnPreviousCarouselButton() {
+        System.out.println("Clicking on previous carousel button...");
+        previousButtonCarousel.click();
+    }
+
+    public void clickOnNextCarouselButton() {
+        System.out.println("Clicking on next carousel button...");
+        nextButtonCarousel.click();
     }
 
 

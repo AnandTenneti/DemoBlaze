@@ -2,14 +2,12 @@ package com.tests;
 
 import com.pages.HomePage;
 import com.pages.ProductDetailsPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
@@ -67,6 +65,26 @@ public class HomePageTest extends BaseTest {
         Thread.sleep(3000);
     }
 
+    @Test(priority = 4)
+    public void testCarouselNavigation() throws InterruptedException {
+        System.out.println("Testing carousel navigation...");
+        HomePage homePage = new HomePage(driver);
 
+        String activeImageText = homePage.getActiveCarouselImageAltText();
+        System.out.println("Active image text: " + activeImageText);
 
+        homePage.clickOnPreviousCarouselButton();
+        Thread.sleep(2000);
+        String previousImageText = homePage.getActiveCarouselImageAltText();
+        System.out.println("Previous image text: " + previousImageText);
+        Assert.assertNotEquals(activeImageText, previousImageText, "Previous image is the same as active image");
+        System.out.println("Navigating to next carousel image...");
+        homePage.clickOnNextCarouselButton();
+        Thread.sleep(2000);
+        String nextImageText = homePage.getActiveCarouselImageAltText();
+        System.out.println("Next image text: " + nextImageText);
+
+        Assert.assertEquals(activeImageText, nextImageText, "Next image is not the same as active " +
+                "image");
+    }
 }
