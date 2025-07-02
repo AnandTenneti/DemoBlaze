@@ -42,6 +42,8 @@ DemoBlaze/
 └── reports/
 └── extent-report.html  
 
+### Project Structure
+
 base/: Contains BaseTest class that sets up and tears down WebDriver sessions.
 
 pages/: Follows the Page Object Model (POM) — each page of the app has a corresponding class with WebElements and methods.
@@ -54,7 +56,30 @@ data/: Optional; data providers for parameterized tests.
 
 resources/: Configuration and data files, e.g., config.properties, test data, locator files.
 
-Tools Commonly Used
+### 🔹 Sample Test Case Ideas
+Login Test
+
+Valid/Invalid credentials
+
+Signup and login flow
+
+Add to Cart
+
+Add multiple products
+
+Remove product from cart
+
+Place Order
+
+Fill form and verify order success
+
+Check confirmation modal
+
+Navigation Test
+
+Filter by category (phones/laptops)
+### Tools Used
+
 Selenium WebDriver
 
 TestNG / JUnit
