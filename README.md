@@ -1,4 +1,4 @@
-### About the Project
+   ### About the Project
 
 Demoblaze is a sample e-commerce site developed by Mercury, featuring:
 * Product categories (Phones, Laptops, Monitors)   
@@ -9,32 +9,56 @@ Demoblaze is a sample e-commerce site developed by Mercury, featuring:
 ### Project Structure
 
 <pre>
-DemoBlaze/
-│
-├── pom.xml                           # Maven configuration file
-├── testng.xml                        # TestNG suite file (if using TestNG)
-├── README.md                         # Project documentation
-│── screenshots/
-├── src/
-│   ├── main/
-│   │   └── java/
-│   │       └── pages/                # Utility classes (e.g., ExcelUtil, WaitHelper)
-│   │       └── config/              # Configuration reader or setup classes
-│   │       └── base/                # BaseTest class for setup/teardown
-│   │
-│   └── test/
-│       └── java/
-│           └── tests/              # Test classes (e.g., LoginTest, SearchTest)
-│           └── pages/              # Page Object Model (POM) classes
-│           └── data/               # Test data providers or test data classes
-│
-├── src/test/resources/
-│   └── config.properties            # Environment configs
-│   └── testdata.xlsx                # Test data files
-│   └── locators.json                # (Optional) Locator storage
-│
-└── reports/
-└── extent-report.html  
+.
+├── logs
+│   └── browserstack-plugin.log
+├── pom.xml
+├── README.md
+├── screenshots
+│   ├── Surefire test_scrollToElementView_failure.png
+│   ├── Surefire test_test_LoginPage_failure.png
+│   ├── Surefire test_test_sendMessage_failure.png
+│   ├── Surefire test_testLoginWithInvalidCredentials_failure.png
+│   ├── Surefire test(failed)_scrollToElementView_failure.png
+│   └── Surefire test(failed)_test_LoginPage_failure.png
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── pages
+│   │   │           ├── CartPage.java
+│   │   │           ├── ContactUsPage.java
+│   │   │           ├── HeaderPage.java
+│   │   │           ├── HomePage.java
+│   │   │           ├── LocatorsRepository.java
+│   │   │           ├── LoginPage.java
+│   │   │           ├── PlaceOrderPage.java
+│   │   │           ├── ProductDetailsPage.java
+│   │   │           ├── RegistrationPage.java
+│   │   │           └── SelfHealing.java
+│   │   └── resources
+│   └── test
+│       ├── java
+│       │   └── com
+│       │       ├── driver
+│       │       │   └── DriverManager.java
+│       │       ├── tests
+│       │       │   ├── BaseTest.java
+│       │       │   ├── CartPageTest.java
+│       │       │   ├── ContactUsTest.java
+│       │       │   ├── DataSupplier.java
+│       │       │   ├── HomePageTest.java
+│       │       │   ├── ITestListenerClass.java
+│       │       │   ├── LoginPageTest.java
+│       │       │   ├── PlaceOrderTest.java
+│       │       │   ├── ProductDetailsTest.java
+│       │       │   └── RegisterTest.java
+│       │       └── utils
+│       │           └── Utils.java
+│       └── resources
+├── target
+└── testng.xml
+ 
 </pre>
 ### Folders
 
