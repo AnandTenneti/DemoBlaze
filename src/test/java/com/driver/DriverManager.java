@@ -11,6 +11,7 @@ public class DriverManager {
     static WebDriver driver;
 
     public static WebDriver initDriver(String browserName) {
+        System.out.println("In the DriverManager initDriver method of driver package...");
         switch (browserName.toLowerCase()) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
