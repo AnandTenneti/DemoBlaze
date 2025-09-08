@@ -23,7 +23,7 @@ jobs:
         with:
           step: restore
       - name: Run the web test
-        run: mvn clean test -Dtest=PlaceOrderTest
+        run: mvn clean test
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v3.1.1
         continue-on-error: true
